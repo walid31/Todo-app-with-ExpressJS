@@ -1,5 +1,6 @@
 var express = require('express');
 var mongoose = require('mongoose');
+var path = require('path');
 var app = express();
 var passport = require('passport');
 var flash = require('connect-flash');
@@ -21,7 +22,7 @@ app.use(bodyParser.json());
 
 var MONGODB_URI = process.env.MONGODB_URL;
 
-mongoose.connect(MONGODB_URI,{ useNewUrlParser: true});
+mongoose.connect('MONGODB_URI',{ useNewUrlParser: true});
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
